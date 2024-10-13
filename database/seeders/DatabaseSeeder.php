@@ -36,13 +36,13 @@ class DatabaseSeeder extends Seeder
 
         Entrada::factory(30)->create()->each(function($entradas){
             ArticuloEntrada::factory(rand(1,5))->create([
-                'entradas_id' => $entradas->id
+                'entrada_id' => $entradas->id
             ]);
         });
         
         Salida::factory(40)->create()->each(function($salidas){
             ArticuloSalida::factory(rand(1,3))->create([
-                'salidas_id' => $salidas->id,
+                'salida_id' => $salidas->id,
             ]);
         });
     }

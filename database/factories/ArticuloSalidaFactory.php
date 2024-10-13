@@ -20,8 +20,8 @@ class ArticuloSalidaFactory extends Factory
     {
         return [
             //
-            'salidas_id' => Salida::factory(),
-            'materials_id' => Material::factory(),
+            'salida_id' => Salida::factory(),
+            'material_id' => Material::factory(),
             'cantidad' => $this->faker->numberBetween(1,50),
         ];
     }

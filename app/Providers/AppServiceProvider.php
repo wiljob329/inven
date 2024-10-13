@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\ArticuloEntrada;
+use App\Observers\ArticuloEntradaObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        ArticuloEntrada::observe(ArticuloEntradaObserver::class);
     }
 }

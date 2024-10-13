@@ -9,15 +9,15 @@ class ArticuloSalida extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['salidas_id', 'materials_id', 'cantidad'];
+    protected $fillable = ['salida_id', 'material_id', 'cantidad'];
 
     public function salida()
     {
-        return $this->belongsTo(Salida::class);
+        return $this->belongsTo(Salida::class, 'salida_id');
     }
 
     public function material()
     {
-        return $this->belongsTo(Material::class);
+        return $this->belongsTo(Material::class, 'material_id');
     }
 }
