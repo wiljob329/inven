@@ -6,6 +6,7 @@ use App\Filament\Resources\EntradaResource\Pages;
 use App\Filament\Resources\EntradaResource\RelationManagers;
 use App\Models\Entrada;
 use Filament\Forms;
+use Filament\Forms\Components\Actions\Action;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Repeater;
@@ -48,7 +49,18 @@ class EntradaResource extends Resource
                                     Select::make('proveedors_id')
                                         ->relationship('proveedor', 'name')
                                         ->searchable()
-                                        ->required(),
+                                        ->required()
+                                        ->createOptionForm([
+                                            TextInput::make('name')
+                                                ->label('Nombre del Proveedor')
+                                                ->required()
+                                        ])
+                                        ->createOptionAction(function (Action $action){
+                                            return $action
+                                                ->modalHeading('Crear Proveedor')
+                                                ->modalSubmitActionLabel('Crear Proveedor')
+                                                ->modalWidth('sm');
+                                        }),
 
                             ])->columns(2),
                         ]),
