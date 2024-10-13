@@ -13,11 +13,11 @@ class ArticuloEntrada extends Model
 
     public function entrada()
     {
-        return $this->belongsTo(Entrada::class);
+        return $this->belongsTo(Entrada::class, 'entradas_id');
     }
 
     public function material()
     {
-        return $this->belongsTo(Material::class);
+        return $this->belongsTo(Material::class, 'materials_id');
     }
 }

@@ -13,7 +13,7 @@ class Entrada extends Model
 
     public function proveedor()
     {
-        return $this->belongsTo(Proveedor::class);
+        return $this->belongsTo(Proveedor::class, 'proveedors_id');
     }
 
     public function articulos()
