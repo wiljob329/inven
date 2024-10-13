@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('fecha');
             $table->string('entregado_a');
             $table->string('departamento');
-            $table->string('id_number');
+            $table->string('cedula');
             $table->string('vehicle_placa');
             $table->timestamps();
         });

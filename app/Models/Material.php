@@ -13,12 +13,12 @@ class Material extends Model
 
     public function deposito()
     {
-        return $this->belongsTo(Deposito::class);
+        return $this->belongsTo(Deposito::class, 'depositos_id');
     }
 
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(Categoria::class, 'categorias_id');
     }
 
     public function articuloEntradas()
